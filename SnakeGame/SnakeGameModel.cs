@@ -26,6 +26,7 @@ namespace SnakeGame
         public const int MOVE_UP = 1;
         public const int MOVE_RIGHT = 2;
         public const int MOVE_DOWN = 3;
+        public const int MOVE_STOP = 4;
 
         public const int BOARD_EMPTY = 0;
         public const int BOARD_SNAKE = 1;
@@ -120,10 +121,11 @@ namespace SnakeGame
             int x, y;
             do
             {
-                x = rand.Next(boardWidth);
-                y = rand.Next(boardHeight);
+                x = rand.Next(1,boardWidth-1);
+                y = rand.Next(1,boardHeight-1);
             } while (isSnakeBody(x, y));
             _board[x, y] = BOARD_FOOD;
+        
         }
 
         protected bool isSnakeBody(int x, int y)
@@ -161,7 +163,7 @@ namespace SnakeGame
             {
                 curHeadX++;
             }
-
+                
             // hit myself?
             if (isSnakeBody(curHeadX, curHeadY))
             {

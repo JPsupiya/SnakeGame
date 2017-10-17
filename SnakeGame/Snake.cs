@@ -56,9 +56,9 @@ namespace SnakeGame
             try
             {
                 Snake.Debug("create view");
-                sgv = new SnakeGameView(40, 40);
+                sgv = new SnakeGameView(40*2, 40*2);
                 Snake.Debug("create model");
-                sgm = new SnakeGameModel(40, 40);
+                sgm = new SnakeGameModel(40*2, 40*2);
                 Snake.Debug("create controller");
                 sgc = new SnakeGameController();
                 Snake.Debug("attach model");

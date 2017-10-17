@@ -30,8 +30,8 @@ namespace SnakeGame
             try
             {
                 graphics = new GraphicsDeviceManager(this);
-                graphics.PreferredBackBufferWidth = _w * TILE_SIZE;
-                graphics.PreferredBackBufferHeight = _h * TILE_SIZE;
+                graphics.PreferredBackBufferWidth = (_w * TILE_SIZE);
+                graphics.PreferredBackBufferHeight = (_h * TILE_SIZE);
                 Content.RootDirectory = "Content";
             }
             catch (Exception e)
@@ -107,6 +107,10 @@ namespace SnakeGame
                         else if (sbm.Board[i, j] == SnakeGameModel.BOARD_WALL)
                         {
                             spriteBatch.Draw(wallTile, position, Color.White);
+                        }
+                        else if(SnakeGameModel.BOARD_FOOD == SnakeGameModel.BOARD_WALL)
+                        {
+
                         }
                     }
                 }
